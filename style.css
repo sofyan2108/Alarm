@@ -1,5 +1,5 @@
 body {
-    font-family: monospace, sans-serif;
+    font-family: Bebas neue;
     font-size: 20px;
     text-align: center;
     box-sizing: border-box;
@@ -7,19 +7,19 @@ body {
     max-width: 30em;
     margin: 0 auto;
     padding: 20px;
-    background-color: #099DB2;
+    background-color: #121212;  /* Latar belakang gelap */
     color: #fff;
-}   
+}
 
 #myBox {
     width: 100%;
     box-sizing: border-box;
-    border: solid 5px #ffffff;
+    border: solid 5px transparent;  /* Border transparan untuk memberikan ruang untuk efek glow */
     height: 380px;
-    border: 5%;
+    border-radius: 10px;
     padding-top: 85px;
     margin-top: 90px;
-    background-color: #2b7b91;   
+    background-color: #1f1f1f;   /* Warna latar belakang yang gelap */
 }
 
 #time {
@@ -27,7 +27,7 @@ body {
     margin-top: -65px;
 }
 
-h3{
+h3 {
     color: #6edf04;
     margin-top: -20px;
     margin-bottom: 10px;
@@ -37,24 +37,34 @@ h3{
 #alarmMins,
 #alarmSecs,
 #mySelect {
-    width: 100px;
-    padding: 10px 20px;
-    margin: 8px 0;
+    width: 120px;
+    padding: 12px 20px;
+    margin: 8px 10px;
     display: inline-block;
     box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    background-color: #2b2b2b;  /* Warna latar belakang elemen yang gelap */
+    color: #fff;
 }
 
 button {
-    width: 100px;
+    width: 120px;
     background-color: #4caf50;
     color: white;
     padding: 14px 10px;
-    margin: 10px, 0;
+    margin: 10px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-button:hover{
-    background-color: #b4b4b2;
+button:hover {
+    background-color: #45a049;
+}
+
+#myBox:hover {
+    border: solid 5px #1e88e5;  /* Warna biru untuk efek glow pada border saat hover */
+    box-shadow: 0 0 20px #1e88e5;  /* Efek glow menggunakan box-shadow */
 }
