@@ -1,1 +1,1 @@
-hosted on : https://uasbbpalarm.mhmmdaskrhbblh.repl.co/
+hosted on :https://alarm-1--sofyanfarros23s.repl.co/
