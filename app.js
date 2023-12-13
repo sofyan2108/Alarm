@@ -140,14 +140,22 @@ class AlarmClock extends Clock {
           this.disableInputs(false);
       }, this.#calculateTimeDifference());
   }
-
   #calculateTimeDifference() {
-      const currentTime = new Date();
-      const alarmTimeArray = this.#alarmTime.split(":");
-      const alarmDateTime = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), alarmTimeArray[0], alarmTimeArray[1], alarmTimeArray[2]);
+    const currentTime = new Date();
+    const alarmTimeArray = this.#alarmTime.split(":");
+    
+    // Membuat objek Date untuk waktu alarm hari ini
+    const alarmDateTimeToday = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate(), alarmTimeArray[0], alarmTimeArray[1], alarmTimeArray[2]);
 
-      return alarmDateTime - currentTime;
-  }
+    // Membuat objek Date untuk waktu alarm besok
+    const alarmDateTimeTomorrow = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate() + 1, alarmTimeArray[0], alarmTimeArray[1], alarmTimeArray[2]);
+
+    // Menentukan perbedaan waktu dari waktu saat ini hingga waktu alarm
+    const timeDifferenceToday = alarmDateTimeToday - currentTime;
+
+    // Jika waktu alarm hari ini sudah lewat, gunakan perbedaan waktu hingga waktu alarm besok
+    return timeDifferenceToday > 0 ? timeDifferenceToday : alarmDateTimeTomorrow - currentTime;
+}
 
 
 
